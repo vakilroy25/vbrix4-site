@@ -35,13 +35,29 @@ def send_notification_email(name, email, message):
             "to": ["hi@vbrix4.com"],
             "subject": f"New contact form submission from {name}",
             "html": f"""
-                <h2>New Contact Form Submission</h2>
-                <p><strong>Name:</strong> {name}</p>
-                <p><strong>Email:</strong> {email}</p>
-                <p><strong>Message:</strong></p>
-                <p>{message.replace(chr(10), '<br>')}</p>
-                <hr>
-                <p><small>Sent from vbrix4.com contact form</small></p>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+    <div style="text-align: center; margin-bottom: 30px;">
+        <img src="https://vbrix4.com/logo.png" alt="vBrix4 Logo" style="width: 80px; height: 80px;" />
+    </div>
+    <h2 style="color: #00d4ff; border-bottom: 2px solid #00d4ff; padding-bottom: 10px;">New Contact Form Submission</h2>
+    <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
+        <p style="margin: 10px 0;"><strong>Name:</strong> {name}</p>
+        <p style="margin: 10px 0;"><strong>Email:</strong> <a href="mailto:{email}" style="color: #00d4ff;">{email}</a></p>
+        <p style="margin: 10px 0;"><strong>Message:</strong></p>
+        <div style="background: white; padding: 15px; border-left: 4px solid #00d4ff; margin-top: 10px;">
+            {message.replace(chr(10), '<br>')}
+        </div>
+    </div>
+    <hr style="border: none; border-top: 1px solid #ddd; margin: 30px 0;">
+    <p style="text-align: center; color: #666; font-size: 12px;">Sent from vbrix4.com contact form</p>
+</body>
+</html>
             """,
             "reply_to": email
         }
@@ -58,14 +74,35 @@ def send_auto_reply(name, email):
             "to": [email],
             "subject": "Thank you for contacting vBrix4",
             "html": f"""
-                <h2>Thank you for reaching out!</h2>
-                <p>Hi {name},</p>
-                <p>We've received your message and appreciate you taking the time to contact us. Our team will review your inquiry and get back to you as soon as possible.</p>
-                <p>If you have any urgent questions in the meantime, feel free to use our chat support on the website.</p>
-                <br>
-                <p>Best regards,<br>The vBrix4 Team</p>
-                <hr>
-                <p><small>This is an automated response from vbrix4.com</small></p>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+    <div style="text-align: center; margin-bottom: 30px;">
+        <img src="https://vbrix4.com/logo.png" alt="vBrix4 Logo" style="width: 100px; height: 100px;" />
+    </div>
+    <h2 style="color: #00d4ff; border-bottom: 2px solid #00d4ff; padding-bottom: 10px;">Thank you for reaching out!</h2>
+    <p style="font-size: 16px; margin: 20px 0;">Hi {name},</p>
+    <p style="font-size: 16px; line-height: 1.8; margin: 20px 0;">
+        We've received your message and appreciate you taking the time to contact us. 
+        Our team will review your inquiry and get back to you as soon as possible.
+    </p>
+    <p style="font-size: 16px; line-height: 1.8; margin: 20px 0;">
+        If you have any urgent questions in the meantime, feel free to use our chat support on the website.
+    </p>
+    <div style="background: #f0f8ff; padding: 20px; border-radius: 8px; border-left: 4px solid #00d4ff; margin: 30px 0;">
+        <p style="margin: 0; font-size: 16px;">
+            <strong>Best regards,</strong><br>
+            The vBrix4 Team
+        </p>
+    </div>
+    <hr style="border: none; border-top: 1px solid #ddd; margin: 30px 0;">
+    <p style="text-align: center; color: #666; font-size: 12px;">This is an automated response from vbrix4.com</p>
+</body>
+</html>
             """
         }
         email_response = resend.Emails.send(params)
