@@ -4,11 +4,13 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="site-footer">
+    <footer className="site-footer" itemScope itemType="https://schema.org/WPFooter">
       <div className="container">
         <div className="footer-content">
-          <img src="/logo.png" alt="vBrix4 Logo" className="footer-logo" />
-          <p className="footer-text">© {currentYear} vBrix4. All rights reserved.</p>
+          <img src="/logo.png" alt="vBrix4 Logo - AI co-pilot for Design Verification" className="footer-logo" />
+          <p className="footer-text">
+            © {currentYear} <span itemProp="name">vBrix4</span>. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

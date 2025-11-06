@@ -1,0 +1,12 @@
+# robots.txt for vbrix4.com
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# Disallow crawling of API endpoints
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://vbrix4.com/sitemap.xml
+

@@ -3,9 +3,9 @@ import './DemoSections.css';
 
 const DemoSections = () => {
   return (
-    <section id="demos" className="demo-sections">
+    <section id="demos" className="demo-sections" aria-labelledby="demos-title">
       <div className="container">
-        <h2 className="demos-title">
+        <h2 id="demos-title" className="demos-title">
           See <span className="gradient-text">vBrix4</span> in Action
         </h2>
 

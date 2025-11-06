@@ -8,7 +8,7 @@ const About = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="about" className="about-section">
+    <section id="about" className="about-section" aria-labelledby="about-title">
       <div className="container">
         <motion.div
           ref={ref}
@@ -17,7 +17,7 @@ const About = () => {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <h2 className="about-title">
+          <h2 id="about-title" className="about-title">
             <span className="gradient-text">Revolutionizing</span> Design Verification
           </h2>
           

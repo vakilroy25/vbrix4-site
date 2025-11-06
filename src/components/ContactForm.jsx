@@ -61,7 +61,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section id="contact" className="contact-section">
+    <section id="contact" className="contact-section" aria-labelledby="contact-title">
       <div className="container">
         <motion.div
           ref={ref}
@@ -70,7 +70,7 @@ const ContactForm = () => {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <h2 className="contact-title">
+          <h2 id="contact-title" className="contact-title">
             Let's <span className="gradient-text">Connect</span>
           </h2>
 
