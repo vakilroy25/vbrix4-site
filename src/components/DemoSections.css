@@ -1,0 +1,21 @@
+.demo-sections {
+  padding: 80px 0 40px;
+}
+
+.demos-title {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+@media (max-width: 768px) {
+  .demo-sections {
+    padding: 60px 0 20px;
+  }
+
+  .demos-title {
+    margin-bottom: 60px;
+  }
+}
+

@@ -1,0 +1,101 @@
+.example-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 120px;
+}
+
+.example-section.reverse {
+  direction: rtl;
+}
+
+.example-section.reverse > * {
+  direction: ltr;
+}
+
+.example-content {
+  padding: 20px;
+}
+
+.example-title {
+  font-size: clamp(28px, 3vw, 36px);
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, var(--electric-blue), var(--cyber-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.example-description {
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+.example-video {
+  position: relative;
+}
+
+.video-wrapper {
+  position: relative;
+  padding: 12px;
+  overflow: hidden;
+}
+
+.video-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--electric-blue), var(--cyber-purple));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 20px;
+  padding: 2px;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.video-wrapper:hover::before {
+  opacity: 0.5;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 12px;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 968px) {
+  .example-section {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 80px;
+  }
+
+  .example-section.reverse {
+    direction: ltr;
+  }
+
+  .example-content {
+    padding: 0;
+  }
+
+  .example-title {
+    font-size: 28px;
+  }
+
+  .example-description {
+    font-size: 16px;
+  }
+}
+
