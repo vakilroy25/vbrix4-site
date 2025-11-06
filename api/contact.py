@@ -69,41 +69,70 @@ def send_notification_email(name, email, message):
 def send_auto_reply(name, email):
     """Send auto-reply to user"""
     try:
+        # Escape name to prevent HTML injection
+        safe_name = name.replace('<', '&lt;').replace('>', '&gt;')
+        
         params = {
             "from": "vBrix4 Team <hi@vbrix4.com>",
             "to": [email],
             "subject": "Thank you for contacting vBrix4",
-            "html": f"""
-<!DOCTYPE html>
+            "html": f"""<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-    <div style="text-align: center; margin-bottom: 30px;">
-        <img src="https://vbrix4.com/logo.png" alt="vBrix4 Logo" style="width: 100px; height: 100px;" />
-    </div>
-    <h2 style="color: #00d4ff; border-bottom: 2px solid #00d4ff; padding-bottom: 10px;">Thank you for reaching out!</h2>
-    <p style="font-size: 16px; margin: 20px 0;">Hi {name},</p>
-    <p style="font-size: 16px; line-height: 1.8; margin: 20px 0;">
-        We've received your message and appreciate you taking the time to contact us. 
-        Our team will review your inquiry and get back to you as soon as possible.
-    </p>
-    <p style="font-size: 16px; line-height: 1.8; margin: 20px 0;">
-        If you have any urgent questions in the meantime, feel free to use our chat support on the website.
-    </p>
-    <div style="background: #f0f8ff; padding: 20px; border-radius: 8px; border-left: 4px solid #00d4ff; margin: 30px 0;">
-        <p style="margin: 0; font-size: 16px;">
-            <strong>Best regards,</strong><br>
-            The vBrix4 Team
-        </p>
-    </div>
-    <hr style="border: none; border-top: 1px solid #ddd; margin: 30px 0;">
-    <p style="text-align: center; color: #666; font-size: 12px;">This is an automated response from vbrix4.com</p>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333333; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #ffffff;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="center" style="padding-bottom: 30px;">
+<img src="https://vbrix4.com/logo.png" alt="vBrix4 Logo" width="100" height="100" style="display: block;" />
+</td>
+</tr>
+<tr>
+<td>
+<h2 style="color: #00d4ff; border-bottom: 2px solid #00d4ff; padding-bottom: 10px; margin-top: 0;">Thank you for reaching out!</h2>
+</td>
+</tr>
+<tr>
+<td>
+<p style="font-size: 16px; margin: 20px 0;">Hi {safe_name},</p>
+</td>
+</tr>
+<tr>
+<td>
+<p style="font-size: 16px; line-height: 1.8; margin: 20px 0;">We have received your message and appreciate you taking the time to contact us. Our team will review your inquiry and get back to you as soon as possible.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p style="font-size: 16px; line-height: 1.8; margin: 20px 0;">If you have any urgent questions in the meantime, feel free to use our chat support on the website.</p>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" cellpadding="20" cellspacing="0" border="0" style="background-color: #f0f8ff; border-left: 4px solid #00d4ff; margin: 30px 0;">
+<tr>
+<td>
+<p style="margin: 0; font-size: 16px;"><strong>Best regards,</strong><br/>The vBrix4 Team</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<hr style="border: none; border-top: 1px solid #dddddd; margin: 30px 0;" />
+</td>
+</tr>
+<tr>
+<td align="center">
+<p style="color: #666666; font-size: 12px; margin: 0;">This is an automated response from vbrix4.com</p>
+</td>
+</tr>
+</table>
 </body>
-</html>
-            """
+</html>""",
         }
         email_response = resend.Emails.send(params)
         return True, email_response
