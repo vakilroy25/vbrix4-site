@@ -43,15 +43,12 @@
   <section id="contact" class="contact wrap">
     <h2>Contact Us</h2>
   
-    <form id="contact-form" action="https://formspree.io/f/xwpwgvre" method="POST" class="contact-form" novalidate>
+    <form id="contact-form" class="contact-form" novalidate>
       <div class="row">
         <input type="text" name="name" placeholder="Name" required />
         <input type="email" name="email" placeholder="Email" required />
       </div>
       <textarea name="message" placeholder="How can we help?" required></textarea>
-  
-      <!-- Optional: subject line in the email you receive -->
-      <input type="hidden" name="_subject" value="New message from vbrix4.com" />
   
       <!-- Spam honeypot (leave hidden) -->
       <input type="text" name="website" tabindex="-1" autocomplete="off" style="display:none" />
@@ -59,8 +56,17 @@
       <button type="submit" id="contact-submit">Send</button>
       <p id="contact-status" class="fine" aria-live="polite" style="min-height:1.2em"></p>
     </form>
+
+    <div id="contact-success" style="display:none;">
+      <div class="success-message">
+        <h3 style="color: var(--accent); margin-top: 0;">Thank you for reaching out!</h3>
+        <p>We've received your message and appreciate you taking the time to contact us.</p>
+        <p>Our team will review your inquiry and get back to you as soon as possible. You should also receive a confirmation email shortly.</p>
+        <p class="fine" style="margin-top: 24px;">In the meantime, feel free to explore our demos or use the chat bubble for urgent questions.</p>
+      </div>
+    </div>
   
-    <p class="fine">Prefer chat? Use the bubble in the corner—we’ll respond quickly.</p>
+    <p class="fine">Prefer chat? Use the bubble in the corner—we'll respond quickly.</p>
   </section>
   
 

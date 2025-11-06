@@ -3,6 +3,7 @@ document.getElementById('y').textContent = new Date().getFullYear();
 const form = document.getElementById('contact-form');
 const statusEl = document.getElementById('contact-status');
 const btn = document.getElementById('contact-submit');
+const contactSection = document.getElementById('contact');
 
 if (form) {
   form.addEventListener('submit', async (e) => {
@@ -12,26 +13,43 @@ if (form) {
 
     const fd = new FormData(form);
     // Basic spam check: if honeypot has content, bail silently
-    if (fd.get('website')) { statusEl.textContent = 'Sent.'; return; }
+    if (fd.get('website')) {
+      showSuccessMessage();
+      return;
+    }
 
     try {
-      const res = await fetch(form.action, {
+      const res = await fetch('/api/contact', {
         method: 'POST',
-        body: fd,
-        headers: { 'Accept': 'application/json' }
+        body: new URLSearchParams(fd),
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
       });
 
-      if (res.ok) {
-        form.reset();
-        statusEl.textContent = 'Thanks! We’ll get back to you shortly.';
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        showSuccessMessage();
       } else {
-        const data = await res.json().catch(() => ({}));
-        statusEl.textContent = data?.errors?.[0]?.message || 'Send failed. Please try again.';
+        statusEl.textContent = data.error || 'Send failed. Please try again.';
+        btn.disabled = false;
       }
     } catch (err) {
       statusEl.textContent = 'Network error. Please try again.';
-    } finally {
       btn.disabled = false;
     }
   });
+}
+
+function showSuccessMessage() {
+  // Hide the form
+  const formContainer = document.querySelector('.contact-form');
+  if (formContainer) {
+    formContainer.style.display = 'none';
+  }
+  
+  // Show success message
+  const successMsg = document.getElementById('contact-success');
+  if (successMsg) {
+    successMsg.style.display = 'block';
+  }
 }
