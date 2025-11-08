@@ -3,7 +3,7 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import './ExampleSection.css';
 
-const ExampleSection = ({ title, description, videoId, reverse = false }) => {
+const ExampleSection = ({ title, description, imageSrc, reverse = false }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
@@ -22,11 +22,10 @@ const ExampleSection = ({ title, description, videoId, reverse = false }) => {
       
       <div className="example-video">
         <div className="video-wrapper glass">
-          <iframe
-            src={`https://www.youtube.com/embed/${videoId}`}
-            title={title}
-            allowFullScreen
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          <img
+            src={imageSrc}
+            alt={title}
+            className="example-image"
           />
         </div>
       </div>

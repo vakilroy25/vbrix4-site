@@ -30,7 +30,7 @@ const Header = () => {
         </div>
         <nav className="nav">
           <a href="#about" onClick={(e) => scrollToSection(e, 'about')}>About</a>
-          <a href="#demos" onClick={(e) => scrollToSection(e, 'demos')}>Demos</a>
+          <a href="#demos" onClick={(e) => scrollToSection(e, 'demos')}>Features</a>
           <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')}>Contact</a>
         </nav>
       </div>
