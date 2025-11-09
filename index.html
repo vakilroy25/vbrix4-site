@@ -83,6 +83,21 @@
     "description": "AI-powered co-pilot for design verification with visual programming blocks, deep EDA integrations, and intelligent workflow automation."
   }
   </script>
+  
+  <!-- Unregister old service workers from previous site version -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        for (let registration of registrations) {
+          registration.unregister().then(function(success) {
+            if (success) {
+              console.log('Old service worker unregistered successfully');
+            }
+          });
+        }
+      });
+    }
+  </script>
 </head>
 <body>
   <div id="root"></div>
