@@ -83,7 +83,7 @@ const Hero = () => {
             Contact Us
           </button>
           <button className="btn btn-ghost" onClick={scrollToDemos}>
-            Watch Demos
+            Explore Features
           </button>
         </motion.div>
       </div>
