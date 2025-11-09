@@ -38,7 +38,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="hero" aria-label="Hero section">
+    <section id="hero" className="hero" aria-label="Hero section">
       <div className="container hero-content">
         <motion.div
           className="brand-showcase"

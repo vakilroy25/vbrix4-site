@@ -24,10 +24,10 @@ const Header = () => {
   return (
     <header className={`site-header ${scrolled ? 'scrolled' : ''}`}>
       <div className="container header-content">
-        <div className="logo">
+        <a href="#hero" onClick={(e) => scrollToSection(e, 'hero')} className="logo">
           <img src="/logo.png" alt="vBrix4 Logo" className="logo-image" />
           <span className="logo-text gradient-text">vBrix4</span>
-        </div>
+        </a>
         <nav className="nav">
           <a href="#about" onClick={(e) => scrollToSection(e, 'about')}>About</a>
           <a href="#demos" onClick={(e) => scrollToSection(e, 'demos')}>Features</a>
