@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import './Hero.css';
 
 const Hero = () => {
-  const words = ['debug', 'testbench', 'BI', 'planning', 'verification', 'simulation', 'automation', 'validation'];
+  const words = ['agents', 'debug', 'coverage', 'triage', 'simulation', 'automation', 'root cause', 'test generation'];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -61,7 +61,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
         >
-          Your AI-powered co-pilot for Design Verification
+          Custom AI Agents for Design Verification
         </motion.h1>
 
         <motion.p
@@ -70,7 +70,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
         >
-          Build, run & debug verification workflows faster—visual blocks, deep integrations, and AI where it matters.
+          vBrix4 is building custom AI agents for verification teams—designed to surface bugs that would otherwise be missed, autonomously investigate failures, generate targeted tests, and drive simulation campaigns, so your team spends less time on manual triage and more time closing real coverage.
         </motion.p>
 
         <motion.div

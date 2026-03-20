@@ -18,45 +18,43 @@ const About = () => {
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <h2 id="about-title" className="about-title">
-            <span className="gradient-text">Revolutionizing</span> Design Verification
+            <span className="gradient-text">Deeper</span> Verification, Automated
           </h2>
           
           <div className="about-text">
             <p>
-              vBrix4 is your AI-powered co-pilot for design verification, transforming how teams build, run, 
-              and debug complex verification workflows. We combine visual programming with deep EDA integrations 
-              to make verification faster, smarter, and more intuitive.
+              Verification teams face a compounding problem: designs grow more complex every cycle, but debug 
+              and coverage closure still rely heavily on manual effort. Failures get triaged by hand, waveforms 
+              reviewed one by one—and critical bugs slip through simply because there wasn't time to look deeper.
             </p>
             
             <p>
-              Our platform leverages advanced AI to detect anomalies across logs and waveforms, compare test runs 
-              with intelligent fork analysis, and even generate custom verification blocks from natural language 
-              prompts. Whether you're working with industry-standard tools or custom flows, vBrix4 seamlessly 
-              integrates into your existing ecosystem.
-            </p>
-            
-            <p>
-              Join the next generation of verification engineers who are building better chips faster with the 
-              power of visual blocks and AI assistance working together in harmony.
+              vBrix4 is built around <strong>custom AI agents</strong> tailored to your team's environment. Each 
+              agent operates with awareness of your design and verification context, enabling it to investigate 
+              failures autonomously, analyze waveforms, generate targeted tests, and iterate through simulations 
+              without waiting for a human to drive each step. The underlying platform connects easily with 
+              external tools—pushing results to email, dashboards, or reporting channels—and lets teams build 
+              reusable workflows that cut repetitive work across projects. The result isn't just faster 
+              verification—it's a process capable of finding bugs that would otherwise go undetected.
             </p>
           </div>
 
           <div className="about-features">
             <div className="feature-badge">
-              <span className="badge-icon">🎯</span>
-              <span>AI-Powered Analysis</span>
+              <span className="badge-icon">🤖</span>
+              <span>Custom AI Agents</span>
             </div>
             <div className="feature-badge">
-              <span className="badge-icon">🧩</span>
-              <span>Visual Blocks</span>
+              <span className="badge-icon">🧠</span>
+              <span>Design-Aware Context</span>
             </div>
             <div className="feature-badge">
               <span className="badge-icon">🔗</span>
-              <span>Deep Integrations</span>
+              <span>Seamless Integrations</span>
             </div>
             <div className="feature-badge">
               <span className="badge-icon">⚡</span>
-              <span>Lightning Fast</span>
+              <span>Automated Debug & Coverage</span>
             </div>
           </div>
         </motion.div>
