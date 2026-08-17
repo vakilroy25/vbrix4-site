@@ -5,6 +5,7 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
 import DemoSections from './components/DemoSections'
+import Capabilities from './components/Capabilities'
 import ContactForm from './components/ContactForm'
 import Footer from './components/Footer'
 import QRRedirect from './components/QRRedirect'
@@ -19,6 +20,7 @@ function MainContent() {
         <Hero />
         <About />
         <DemoSections />
+        <Capabilities />
         <ContactForm />
       </main>
       <Footer />

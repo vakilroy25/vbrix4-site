@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import './Hero.css';
 
 const Hero = () => {
-  const words = ['agents', 'debug', 'coverage', 'triage', 'simulation', 'automation', 'root cause', 'test generation'];
+  const words = ['workflows', 'agents', 'automation', 'orchestration', 'integration', 'debug', 'coverage', 'reuse'];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -61,7 +61,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
         >
-          Custom AI Agents for Design Verification
+          Build, Run, and Automate Verification AI Workflows
         </motion.h1>
 
         <motion.p
@@ -70,7 +70,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
         >
-          vBrix4 is building custom AI agents for verification teams—designed to surface bugs that would otherwise be missed, autonomously investigate failures, generate targeted tests, and drive simulation campaigns, so your team spends less time on manual triage and more time closing real coverage.
+          vBrix4 is an AI-native platform for semiconductor verification teams. Build agents and workflows visually, connect the models, scripts, and EDA tools you already use, and run them on demand, on a schedule, or straight from your CI. Your team gets AI working inside everyday verification—without anyone having to become an AI infrastructure expert. Find more bugs in less time.
         </motion.p>
 
         <motion.div
@@ -83,7 +83,7 @@ const Hero = () => {
             Contact Us
           </button>
           <button className="btn btn-ghost" onClick={scrollToDemos}>
-            Explore Features
+            See What You Can Build
           </button>
         </motion.div>
       </div>

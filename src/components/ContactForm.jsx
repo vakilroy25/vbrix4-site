@@ -162,7 +162,7 @@ const ContactForm = () => {
                 You should also receive a confirmation email shortly.
               </p>
               <p className="success-note">
-                In the meantime, feel free to explore our demos or use the chat bubble for urgent questions.
+                In the meantime, feel free to explore the platform or use the chat bubble for urgent questions.
               </p>
             </div>
           )}

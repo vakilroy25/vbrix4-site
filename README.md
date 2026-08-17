@@ -1,6 +1,6 @@
 # vBrix4 Website
 
-Official hi-tech website for vBrix4 - AI co-pilot for Design Verification
+Official hi-tech website for vBrix4 - the AI workflow and agent platform for semiconductor verification
 
 ## 🚀 Modern React Application
 
@@ -52,6 +52,7 @@ vbrix4-site/
 │   │   ├── About.jsx              # About section
 │   │   ├── DemoSections.jsx       # Demo sections wrapper
 │   │   ├── ExampleSection.jsx     # Reusable demo component
+│   │   ├── Capabilities.jsx       # Platform capabilities grid
 │   │   ├── ContactForm.jsx        # Contact form with API
 │   │   ├── Footer.jsx             # Footer
 │   │   └── *.css                  # Component styles
@@ -192,7 +193,7 @@ The contact form uses a custom Python serverless backend deployed on Vercel with
 
 ### 1. Hero Section
 - Large "vBrix4" brand name with gradient text and glow effect
-- Animated cycling words (debug, testbench, BI, planning) that fade in/out
+- Animated cycling words (workflows, agents, orchestration, ...) that fade in/out
 - Clear value proposition
 - Call-to-action buttons with hover effects
 
@@ -203,26 +204,31 @@ The contact form uses a custom Python serverless backend deployed on Vercel with
 - Scroll-triggered animations
 
 ### 3. Demo Sections
-- Three alternating layouts (text left/right, video right/left)
-- YouTube video embeds with glassmorphism frames
+- Three alternating layouts (text left/right, image right/left)
+- Illustration images in glassmorphism frames
 - Smooth entrance animations
 - Responsive design for mobile
 
-### 4. Contact Form
+### 4. Capabilities Grid
+- Ten-item scannable grid of platform capabilities
+- Glassmorphism cards with hover lift
+- Collapses to a single column on mobile
+
+### 5. Contact Form
 - Glassmorphism design with frosted glass effect
 - Glowing borders on focus
 - Animated submit button with loading state
 - Success message with scale-in animation
 - Maintains API functionality from original site
 
-### 5. Fixed Background
+### 6. Fixed Background
 - Animated floating blocks (representing visual programming)
 - Neural network-style connections between blocks
 - Subtle glow effects suggesting AI processing
 - Stays fixed while content scrolls
 - Low opacity to not distract from content
 
-### 6. Header & Footer
+### 7. Header & Footer
 - Sticky header with blur effect on scroll
 - Smooth scroll navigation
 - Gradient underline on hover
@@ -248,7 +254,7 @@ Edit `/src/styles/globals.css`:
 Edit `/src/components/Hero.jsx`:
 
 ```javascript
-const words = ['debug', 'testbench', 'BI', 'planning'];
+const words = ['workflows', 'agents', 'automation', 'orchestration', 'integration', 'debug', 'coverage', 'reuse'];
 ```
 
 ### Updating Video IDs

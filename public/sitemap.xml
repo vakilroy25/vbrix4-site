@@ -3,7 +3,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://vbrix4.com/</loc>
-    <lastmod>2025-11-06</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -11,15 +11,23 @@
   <!-- About Section -->
   <url>
     <loc>https://vbrix4.com/#about</loc>
-    <lastmod>2025-11-06</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <!-- Demos Section -->
+  <!-- Platform Section -->
   <url>
     <loc>https://vbrix4.com/#demos</loc>
-    <lastmod>2025-11-06</lastmod>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Capabilities Section -->
+  <url>
+    <loc>https://vbrix4.com/#capabilities</loc>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -27,9 +35,8 @@
   <!-- Contact Section -->
   <url>
     <loc>https://vbrix4.com/#contact</loc>
-    <lastmod>2025-11-06</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 </urlset>
-

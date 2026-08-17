@@ -58,7 +58,18 @@
 }
 
 .badge-icon {
-  font-size: 24px;
+  display: flex;
+  flex-shrink: 0;
+  color: var(--electric-blue);
+}
+
+.badge-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.feature-badge:hover .badge-icon {
+  color: var(--text-primary);
 }
 
 @media (max-width: 768px) {
@@ -84,8 +95,9 @@
     font-size: 14px;
   }
 
-  .badge-icon {
-    font-size: 20px;
+  .badge-icon svg {
+    width: 19px;
+    height: 19px;
   }
 }
 

@@ -97,3 +97,10 @@
   }
 }
 
+/* Four links no longer fit beside the logo on narrow phones */
+@media (max-width: 600px) {
+  .nav-secondary {
+    display: none;
+  }
+}
+
